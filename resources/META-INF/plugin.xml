@@ -5,11 +5,14 @@
     <description>
         Control PHPStorm via RESTful API
     </description>
-    <version>0.0.1</version>
+    <version>0.0.2</version>
     <vendor>Michael Wölk</vendor>
 
     <change-notes>
-        0.0.1 First release
+        <![CDATA[
+        <li>0.0.2 Support for jumping to specific line</li>
+        <li>0.0.1 First release</li>
+        ]]>
     </change-notes>
 
     <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->

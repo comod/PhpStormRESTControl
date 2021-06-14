@@ -1,17 +1,10 @@
 package system;
 
-//import com.google.common.collect.Lists;
-import com.intellij.ide.DataManager;
-import com.intellij.openapi.actionSystem.DataConstants;
-import com.intellij.openapi.actionSystem.DataContext;
 import com.intellij.openapi.application.ApplicationManager;
-import com.intellij.openapi.editor.Document;
-import com.intellij.openapi.editor.event.CaretEvent;
-import com.intellij.openapi.editor.event.CaretListener;
 import com.intellij.openapi.fileEditor.OpenFileDescriptor;
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.util.TextRange;
 import com.intellij.openapi.vfs.VirtualFile;
+import org.jetbrains.annotations.NotNull;
 
 public class Editor {
 
@@ -21,7 +14,7 @@ public class Editor {
         this.project = project;
     }
 
-    public void jumpToLine(String path, Integer line) {
+    public void jumpToLine(@NotNull String path, Integer line) {
 
         try {
 
@@ -38,8 +31,6 @@ public class Editor {
                     }
                 });
 
-            } else {
-                //Notification.notify("Couldnt find the file: " + path);
             }
         } catch (Exception e) {
             Notification.notify(e.getMessage());
