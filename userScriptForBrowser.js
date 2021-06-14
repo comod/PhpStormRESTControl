@@ -39,13 +39,13 @@ this.$ = this.jQuery = jQuery.noConflict(true);
   function init(elements) {
 
     elements.each(function (i, sel) {
-      const span = '<span class="phpstormIcon" style="cursor: pointer;"><img src="http://woelk.it/phpstorm_logo.jpg" height="16"/></span>';
+      const span = '<span class="phpstormIcon" style="cursor: pointer;"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c9/PhpStorm_Icon.svg" height="16"/></span>';
       $(sel).not(':has(span.phpstormIcon)').prepend(span);
     });
 
     $('.phpstormIcon').click(function (event) {
       event.stopPropagation();
-      const filename = $(this).parents('.changes-tree, .file-header').find('a').attr('href');
+      let filename = $(this).parents('.changes-tree .file, .file-header').find('a').attr('href');
       filename = filename.replace(/^.*#/, '');
       if (filename === null) {
         return;
@@ -74,8 +74,7 @@ this.$ = this.jQuery = jQuery.noConflict(true);
     }, msInitOnReady);
   }
 
-  $('#pull-requests-container').arrive('.pull-request-activities, .changes', function() {
-    initOnReady();
-  });
+  $('#pull-requests-container').arrive('.pull-request-activities, .changes', initOnReady);
+  $(document).ready(initOnReady);
 
 })();
