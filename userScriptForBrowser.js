@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         PhpStormRESTControl
 // @version      0.2
-// @description  Opens a file from Bitbucket in your IDE!
+// @description  Opens a file from Bitbucket in your IDE! Adapt @match below to suit your needs.
 // @author       Michael Wölk
 // @match        https://bitbucket.org/*
 // @require      https://code.jquery.com/jquery-3.2.1.min.js
