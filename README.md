@@ -9,14 +9,14 @@ Control PHPStorm via RESTful API
 Function | Endpoint
 --- | ---
 Jump to File | GET http://localhost:*port*/?*file*
-Jump to File + Line | *coming soon*
+Jump to File + Line | GET http://localhost:*port*/?file=*file*&line=*line*
 
 ### Example ###
 Jump to a File from Bitbucket (or any other Repository Tool) with a simple AJAX-Call:
 ```javascript
 let file = 'README.md';
 return $.ajax({
-  'http://localhost:'8100/?' + file,
+  'http://localhost:8100/?' + file,
   type: 'GET'
 });
 ```
