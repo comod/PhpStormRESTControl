@@ -8,17 +8,25 @@ Control PHPStorm via RESTful API
 
 Function | Endpoint
 --- | ---
-Jump to File | GET http://localhost:*port*/?*file*
-Jump to File + Line | GET http://localhost:*port*/?file=*file*&line=*line*
+Jump to File | GET http://localhost:*port*?file=*file*
+Jump to File + Line | GET http://localhost:*port*?file=*file*&line=*line*
+
+### Port ###
+This plugin is searching for a free port starting at 8100
 
 ### Example ###
 Jump to a File from Bitbucket (or any other Repository Tool) with a simple AJAX-Call:
 ```javascript
-let file = 'README.md';
 return $.ajax({
-  'http://localhost:8100/?' + file,
+  'http://localhost:8100?file=README.md[&line=10]', // 'line' parameter is optional
   type: 'GET'
 });
+```
+```javascript
+fetch('http://localhost:8100?file=README.md[&line=10]');
+```
+```bash
+curl 'http://localhost:8100?file=README.md[&line=10]'
 ```
 
 See also: [userScriptForBrowser.js]
