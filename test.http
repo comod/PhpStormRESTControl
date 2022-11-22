@@ -1,0 +1,7 @@
+### test
+GET http://localhost:8100/?file=test.http&line=4
+
+### after clicking the play button above you should land here in this line
+
+### open another file
+GET http://localhost:8100/?file=README.md

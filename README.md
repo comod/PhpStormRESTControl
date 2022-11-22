@@ -1,38 +1,30 @@
-# PhpStormRESTControl #
-PhpStormRESTControl IntelliJ IDEA Plugin.
+# PhpStormRESTControl IntelliJ IDEA Plugin & Userscripts
+Jump to a File & Line with by simple Rest-Call
 
-### What does it do? ###
-Control PHPStorm via RESTful API
+## What does it do?
+- This plugin creates an internal rest api service you can talk to (examples below)
+- In combination with UserScripts (eg Tampermonkey Chrome Extension) any Path can be used to be opened in the IDE (eg Bitbucket, Gitlab, Kibana, Sentry -paths)
 
-### API ###
+## API
 
 Function | Endpoint
 --- | ---
 Jump to File | GET http://localhost:*port*?file=*file*
 Jump to File + Line | GET http://localhost:*port*?file=*file*&line=*line*
 
-### Port ###
+### Port
 This plugin is searching for a free port starting at 8100
 
-### Example ###
-Jump to a File from Bitbucket (or any other Repository Tool) with a simple AJAX-Call:
-```javascript
-return $.ajax({
-  'http://localhost:8100?file=README.md[&line=10]', // 'line' parameter is optional
-  type: 'GET'
-});
-```
-```javascript
-fetch('http://localhost:8100?file=README.md[&line=10]');
-```
+### Example
 ```bash
-curl 'http://localhost:8100?file=README.md[&line=10]'
+GET http://localhost:8100/?file=README.md
 ```
 
-See also: [userScriptForBrowser.js]
+## Plugin
+[PhpStormRESTControl.jar](PhpStormRESTControl.jar)
 
-[userScriptForBrowser.js]: userScriptForBrowser.js
+## Userscripts
+[userscripts/](userscripts/)
 
-### Contribute ###
+## Contribute ###
 Help is always welcome!
-Tell me your opinion or ideas or help me develop the plugin.
