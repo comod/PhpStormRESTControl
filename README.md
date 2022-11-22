@@ -1,5 +1,5 @@
 # PhpStormRESTControl IntelliJ IDEA Plugin & Userscripts
-Jump to a File & Line with by simple Rest-Call
+Jump to a File & Line by simple Rest-Call
 
 ## What does it do?
 - This plugin creates an internal rest api service you can talk to (examples below)
